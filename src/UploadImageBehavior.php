@@ -133,7 +133,7 @@ class UploadImageBehavior extends UploadBehavior
     protected function createThumbs()
     {
         $path = $this->getUploadPath($this->attribute);
-        if (!is_file($path)) {
+        if (!is_string($path) || !is_file($path)) {
             return;
         }
 
